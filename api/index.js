@@ -7,7 +7,6 @@ router.use('/grants', require('./grants'));
 // router.use('/settings', require('./settings'));
 // router.use('/widgets', require('./widgets'));
 
-
 module.exports = router;
 // module.exports = function(app){
 //   //create app.use per new routes

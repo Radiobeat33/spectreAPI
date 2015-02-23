@@ -16,7 +16,6 @@ app.use(cors());
 mongoose.connect($config.mongo.url);
 app.use('/api/v1', cors(), /*decode(),*/ require('./api'));
 
-
 app.listen($config.port, function(){
   console.log("Listening on " + $config.port);
 });
