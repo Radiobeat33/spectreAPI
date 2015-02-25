@@ -1,21 +1,6 @@
 var request = require('request');
 exports.mailchimp = function (req, res) {
 
-  var test = {
-    "apikey": $config.Mailchimp.API_KEY,
-    "filters": {
-        "campaign_id": "example campaign_id",
-        "from_name": "example from_name",
-        "from_email": "example from_email",
-        "subject": "example subject"
-    }
-};
-
-
-	request.post('https://us10.api.mailchimp.com/2.0/campaigns/list.json?apikey=' + $config.Mailchimp.API_KEY, {form: { key: test }}, function optionalCallback(err, httpResponse, body) {
-
-exports.mailchimp = function (req, res) {
-
   var testData = {
 		'apikey': process.env.MAILCHIMP_API_KEY,
 		'filters' : {
