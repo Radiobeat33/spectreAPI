@@ -37,6 +37,7 @@ exports.twitterFollowers = function (req, res) {
         username.followDate.push(users[i]['created_at']);
         username.locations.push(users[i]['location']);
 	  	}
+      res.send(username);
       console.log(username);
 	});
   
