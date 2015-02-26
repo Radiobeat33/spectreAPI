@@ -29,7 +29,7 @@ exports.mailchimpLocationList = function (req, res){
       "id": campaignID
     };
 
-    mailchimpCampaignData(req, res);
+    exports.mailchimpCampaignData(req, res);
 
     request.post('https://us10.api.mailchimp.com/2.0/lists/locations.json?apikey=' + $config.Mailchimp.API_KEY, {form: { key: formData }}, function optionalCallback(err, httpResponse, body) {
       if (err) {
