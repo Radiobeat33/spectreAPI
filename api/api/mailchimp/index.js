@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var request = require('request');
 var router = express.Router();
 
-
-router.post('/mailchimpcall', API.mailchimp);
+router.post('/mailchimpLoc', API.mailchimpLocationList);
+router.post('/mailchimpSub', API.mailchimpSubscribedList);
 
 module.exports = router;

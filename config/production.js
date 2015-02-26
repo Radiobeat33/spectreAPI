@@ -1,6 +1,6 @@
 module.exports = {
   mongo: {
-    url: process.env.MONGOLAB_URI
+    url: process.env.MONGOLAB_URI 
   },
   //productionURL: process.env.PRODUCTION_URL,
   JWT_SECRET: process.env.JWT_SECRET,
@@ -10,7 +10,6 @@ module.exports = {
   Twitter: {
     API_KEY: process.env.TWITTER_API_KEY,
     API_SECRET: process.env.TWITTER_API_SECRET
-    //callbackUrl: process.env.TWITTER_URL
   }
 };
 

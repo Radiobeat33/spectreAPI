@@ -19,7 +19,6 @@ var router = express.Router();
 // 		next(new Error('Not implemented yet'));
 // 	});
 
-
 // router.route('/:id')
 // 	.get(controller.getOne)
 // 	.put(function(res, req, next){
