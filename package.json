@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/Radiobeat33/spectreAPI.git"
   },
+  "engines": {
+    "node": "0.10.x"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,11 +22,15 @@
   "homepage": "https://github.com/Radiobeat33/spectreAPI",
   "dependencies": {
     "body-parser": "^1.12.0",
+    "cors": "^2.5.3",
     "express": "^4.11.2",
     "google-oauth": "0.0.2",
     "lodash": "^3.3.0",
+    "mailchimp": "^1.1.0",
     "mongoose": "^3.8.23",
-    "passport": "^0.2.1"
+    "passport": "^0.2.1",
+    "request": "^2.53.0",
+    "twitter": "^1.2.1"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
