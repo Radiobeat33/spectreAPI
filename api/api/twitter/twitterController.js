@@ -8,8 +8,6 @@ exports.twitterFollowers = function (req, res) {
 		// check to see if this person has a web token.
 		// if so, make the call with it and return data
 	var client = new Twitter({
-	  // API_KEY: $config.twitter.API_KEY,
-   	  // API_SECRET: $config.facebook.API_SECRET,
     consumer_key: $config.Twitter.API_KEY,
     consumer_secret: $config.Twitter.API_SECRET,
 	  access_token_key: $config.Twitter.ACCESS_TOKEN_KEY,
@@ -29,25 +27,17 @@ exports.twitterFollowers = function (req, res) {
   // followers/list
 	client.get('followers/list', data, function(error, followers, response){
 	  //if (!error) {
-    //   var username = {
-    //     'follow': followers.users[0].length,
-    //     'followDate': [],
-    //     'locations': []
-    //   }
-	  	// var user = followers['users'][0];
-	  	// for (var i = 0; i < user.length; i++) {
-	  	// 	//console.log(users[i]['followers_count']);
-    //     users.followDate.push(followers.users[0]['created_at']);
-    //     users.locations.push(followers.users[0]['location']);
-	  	// }
-      //console.log(users);
-      res.send(followers);
-	  	// res.send(followers.users[0]['created_at']);
-	  	// console.log('Followers retrieval successful');
-	  	// console.log(followers);
-	  	//res.send(followers);
-	    //console.log(tweets);
-	  //}
+      var username = {
+        'follow': followers['users'].length,
+        'followDate': [],
+        'locations': []
+      }
+	  	var users = followers['users'];
+	  	for (var i = 0; i < users.length; i++) {
+        username.followDate.push(users[i]['created_at']);
+        username.locations.push(users[i]['location']);
+	  	}
+      console.log(username);
 	});
   
 };
