@@ -16,8 +16,7 @@ exports.mailchimpCampaignData = function (req, res) {
 	  if (err) {
 	    return (err);
 	  }
-    campaignID = body.data[0].id;
-    console.log('here is the campaign ID!', campaignID);
+    console.log('here is the campaign ID!', body.data[0].id);
 	});
 }
 
@@ -45,9 +44,7 @@ exports.mailchimpSubscribedList = function (req, res){
     var formData = {
       "apikey": $config.Mailchimp.API_KEY,
       "email": {
-        "email": "example email",
-        "euid": "example euid",
-        "leid": "example leid"
+        "email": "example email"
       }
     };
 

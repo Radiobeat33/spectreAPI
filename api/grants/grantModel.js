@@ -19,6 +19,7 @@ var GrantSchema = new Schema({
 		type: String,
 		required: true
 	}
+	
 });
 
 module.exports = mongoose.model('grant', GrantSchema);

@@ -4,28 +4,22 @@ var Twitter = require('twitter');
 
 exports.twitterFollowers = function (req, res) {
 
+  var decodedToken = jwt.decode(req.body.twitterTokens);
+
 	// once decoded, find 'where token id (name) matches our database name'
 		// check to see if this person has a web token.
 		// if so, make the call with it and return data
 	var client = new Twitter({
     consumer_key: $config.Twitter.API_KEY,
     consumer_secret: $config.Twitter.API_SECRET,
-	  access_token_key: $config.Twitter.ACCESS_TOKEN_KEY,
-	  access_token_secret: $config.Twitter.ACCESS_TOKEN_SECRET
-
+	  access_token_key: decodedToken.token,
+	  access_token_secret: decodedToken.tokenSecret
 	});
-	
-	var data = {
-		screen_name: 'arunvs21',
-		followersCount: 'followersCount',
-		description: 'description'
-	}
 
-  //var params = {screen_name: 'arunvs21'};
   // statuses/user_timeline
   // friends/list
   // followers/list
-	client.get('followers/list', data, function(error, followers, response){
+	client.get('followers/list', function(error, followers, response){
 	  //if (!error) {
       var username = {
         'follow': followers['users'].length,
@@ -37,8 +31,7 @@ exports.twitterFollowers = function (req, res) {
         username.followDate.push(users[i]['created_at']);
         username.locations.push(users[i]['location']);
 	  	}
-      res.send(username);
-      console.log(username);
+      res.send();
 	});
   
 };
